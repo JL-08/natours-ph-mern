@@ -1,0 +1,31 @@
+@import '../../sassStyles/variables';
+
+$navColor: #444444;
+
+nav {
+  height: 3.675em;
+  width: 100%;
+  background-color: $navColor;
+  padding: 0.8em;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 1.875em;
+    width: auto;
+  }
+
+  & > div {
+    flex: 1;
+  }
+
+  div:nth-child(2) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav__btn-primary {
+    border: 2px solid white;
+    border-radius: 50px;
+  }
+}
