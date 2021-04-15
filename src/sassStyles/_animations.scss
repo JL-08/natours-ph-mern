@@ -1,0 +1,26 @@
+$size: 20px;
+$speed: 3s;
+$peakopacity: 0.7;
+
+@keyframes arrows {
+  0% {
+    border-left: $size/3 solid rgba(29, 78, 85, 0);
+    border-bottom: $size/3 solid rgba(29, 78, 85, 0);
+    transform: translate($size/-6, $size * 4/-6) rotate(-45deg);
+  }
+  10%,
+  90% {
+    border-left: $size/3 solid rgba(29, 78, 85, 0);
+    border-bottom: $size/3 solid rgba(29, 78, 85, 0);
+  }
+  50% {
+    border-left: $size/3 solid rgba(29, 78, 85, $peakopacity);
+    border-bottom: $size/3 solid rgba(29, 78, 85, $peakopacity);
+    transform: translate($size/-6, 0px) rotate(-45deg);
+  }
+  100% {
+    border-left: $size/3 solid rgba(29, 78, 85, 0);
+    border-bottom: $size/3 solid rgba(29, 78, 85, 0);
+    transform: translate($size/-6, $size * 4/6) rotate(-45deg);
+  }
+}

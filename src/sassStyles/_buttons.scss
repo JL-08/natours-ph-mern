@@ -9,10 +9,6 @@ button {
   margin: 3px;
   font-size: 1rem;
 
-  &:hover {
-    transform: scale(0.98);
-  }
-
   &:focus {
     outline: none;
   }
@@ -24,4 +20,12 @@ button {
 
 .btn-primary {
   background-color: $primaryColor;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.btn-secondary {
+  background-color: $secondaryColor;
+  font-weight: 600;
+  font-size: 0.875rem;
 }
