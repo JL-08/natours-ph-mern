@@ -1,7 +1,6 @@
 import React from 'react';
 import './Banner.scss';
 import bannerBg from '../../images/banner-1.png';
-import scroll from '../../images/scroll.svg';
 import '../../sassStyles/_animations.scss';
 
 const Banner = () => {
@@ -14,10 +13,12 @@ const Banner = () => {
           Great Adventures
           <br /> Awaits You!
         </h1>
-        <p>
-          Be one with nature and experience the beauty it offers. There is a lot
-          of adventures out there, waiting for us to relive them.
-        </p>
+        <div className='text-wrapper'>
+          <p>
+            Be one with nature and experience the beauty it offers. There is a
+            lot of adventures out there, waiting for us to relive them.
+          </p>
+        </div>
         <div class='arrows'>
           <h3>DISCOVER THE PHILIPPINES</h3>
         </div>
