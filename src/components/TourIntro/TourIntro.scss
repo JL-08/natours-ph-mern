@@ -1,0 +1,33 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
+
+.tour-intro {
+  position: relative;
+  padding-bottom: 10%;
+
+  .intro-bg {
+    position: absolute;
+    bottom: 0;
+
+    height: 85%;
+    width: 100%;
+
+    @include smMinBreakPoint {
+      height: 80%;
+    }
+
+    @include mdMinBreakPoint {
+      height: 70%;
+    }
+
+    background: $primaryShade2Color;
+    background: linear-gradient(
+      175deg,
+      $primaryShade2Color 0%,
+      $primaryColor 100%
+    );
+
+    z-index: -1;
+    clip-path: polygon(0 9vw, 100% 0, 100% calc(100% - 9vw), 0 100%);
+  }
+}

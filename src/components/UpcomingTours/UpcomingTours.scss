@@ -1,0 +1,129 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
+
+.upcoming-tours {
+  padding: 5% 10%;
+
+  .tour-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  h2 {
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 5%;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.2fr 0.5fr 0.2fr;
+
+    @include mdMinBreakPoint {
+      grid-template-columns: 1.5fr 4fr 0.5fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+  }
+
+  .card-img {
+    grid-area: 1 / 1 / 3 / 2;
+
+    @include mdMinBreakPoint {
+      grid-area: 1 / 1 / 3 / 2;
+    }
+  }
+
+  .card-header,
+  .card-bottom-header {
+    padding: 5%;
+    background-color: white;
+  }
+
+  .tour-details {
+    height: 100%;
+
+    @include mdMinBreakPoint {
+      border-bottom: 1px solid black;
+    }
+  }
+
+  .card-header {
+    grid-area: 2 / 1 / 3 / 2;
+    padding-bottom: 0;
+
+    @include mdMinBreakPoint {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+  }
+
+  .card-bottom-header {
+    grid-area: 3 / 1 / 4 / 2;
+
+    @include mdMinBreakPoint {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+    p {
+      line-height: 1.2;
+      letter-spacing: 1px;
+      font-size: 1rem;
+    }
+  }
+
+  .card-arrow {
+    grid-area: 4 / 1 / 5 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+
+    background-color: $primaryLight1Color;
+    color: $primaryDark1Color;
+
+    @include mdMinBreakPoint {
+      grid-area: 1 / 3 / 3 / 4;
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: 2rem;
+
+      @include mdMinBreakPoint {
+        margin-right: 0;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 1.2rem;
+        position: relative;
+        bottom: 5px;
+
+        @include mdMinBreakPoint {
+          display: none;
+        }
+      }
+
+      &:hover {
+        color: $primaryDark2Color;
+        cursor: pointer;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      @include xlMinBreakPoint {
+        font-size: 3.25rem;
+      }
+    }
+  }
+}
