@@ -1,35 +1,46 @@
 @import '../../sassStyles/mixins';
 
 .activities {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
-  grid-gap: 2em;
   padding: 0 5%;
 
-  & > div {
-    position: relative;
-    height: 100%;
-    transition: opacity 0.7s, transform 0.35s;
+  @include mdMinBreakPoint {
+    padding: 0 10%;
+  }
 
-    @include mdMinBreakPoint {
-      &:hover {
-        opacity: 0.7;
-        cursor: pointer;
-      }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 2em;
 
-      &:hover > div {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-        -webkit-transition-delay: 0.05s;
-        transition-delay: 0.05s;
-        -webkit-transition-duration: 0.35s;
-        transition-duration: 0.35s;
+    @include lgMinBreakPoint {
+      height: 60em;
+    }
+
+    & > div {
+      position: relative;
+      height: 100%;
+      transition: opacity 0.7s, transform 0.35s;
+
+      @include mdMinBreakPoint {
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+
+        &:hover > div {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+          -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+          -webkit-transition-duration: 0.35s;
+          transition-duration: 0.35s;
+        }
       }
     }
   }
 
-  & > div > div {
+  & > div > div > div {
     position: absolute;
     bottom: 5%;
     left: 5%;
