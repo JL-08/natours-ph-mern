@@ -5,6 +5,10 @@
   padding: 5%;
   text-align: center;
 
+  h1 {
+    font-weight: 400;
+  }
+
   .tours-container {
     padding: 5%;
     display: grid;
@@ -32,8 +36,8 @@
     }
 
     @include lgMinBreakPoint {
-      width: 25.5vw;
-      height: 40vw;
+      width: 23vw;
+      height: 35vw;
     }
   }
 
@@ -61,7 +65,7 @@
 
     h2 {
       position: absolute;
-      right: 0;
+      right: 0.525em;
       bottom: 0.675em;
 
       width: 80%;
@@ -127,7 +131,7 @@
       }
 
       @include lgMinBreakPoint {
-        font-size: 1.475rem;
+        font-size: 1.125rem;
       }
     }
   }

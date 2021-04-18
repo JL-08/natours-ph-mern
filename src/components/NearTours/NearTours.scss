@@ -1,0 +1,15 @@
+.near-tours {
+  padding: 0 5%;
+  text-align: center;
+
+  h1 {
+    font-weight: 400;
+  }
+
+  .tours-container {
+    padding: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+  }
+}

@@ -5,7 +5,7 @@ import './FeaturedTours.scss';
 const FeaturedTours = () => {
   return (
     <div className='featured-tours'>
-      <h2>FEATURED TOURS</h2>
+      <h1>FEATURED TOURS</h1>
       <div className='tours-container'>
         <Tour />
         <Tour />
