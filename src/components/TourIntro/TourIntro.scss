@@ -29,6 +29,6 @@
     );
 
     z-index: -1;
-    clip-path: polygon(0 9vw, 100% 0, 100% calc(100% - 9vw), 0 100%);
+    clip-path: $clipTop;
   }
 }

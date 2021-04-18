@@ -6,7 +6,7 @@
   height: 100vh;
   width: 100%;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9vw), 0 100%);
+  clip-path: $clipBottom;
 
   & > div {
     height: 100%;

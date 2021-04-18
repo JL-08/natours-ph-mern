@@ -29,3 +29,7 @@ $warningLight1Color: #c432571f;
 
 // Fonts
 $fontFamily1: 'Roboto', sans-serif;
+
+// MISC.
+$clipTop: polygon(0 9vw, 100% 0, 100% calc(100% - 9vw), 0 100%);
+$clipBottom: polygon(0 0, 100% 0, 100% calc(100% - 9vw), 0 100%);
