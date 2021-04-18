@@ -8,6 +8,7 @@ const NearTours = () => {
       <h1>AVAILABLE TOURS NEAR ME</h1>
       <div className='tours-container'>
         <Tour />
+        <Tour />
       </div>
     </div>
   );

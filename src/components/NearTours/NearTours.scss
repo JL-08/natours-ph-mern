@@ -1,15 +1,22 @@
+@import '../../sassStyles/mixins';
+
 .near-tours {
   padding: 0 5%;
-  text-align: center;
 
   h1 {
     font-weight: 400;
+    text-align: center;
   }
 
   .tours-container {
     padding: 5%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2em;
+    justify-items: center;
+
+    @include mdMinBreakPoint {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
