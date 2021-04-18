@@ -22,8 +22,9 @@
 
     background: $primaryShade2Color;
     background: linear-gradient(
-      175deg,
+      100deg,
       $primaryShade2Color 0%,
+      $primaryColor 50%,
       $primaryColor 100%
     );
 
