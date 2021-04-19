@@ -1,0 +1,92 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
+$footerColor: #2d2c2d;
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'logo logo'
+    'nav credits';
+  justify-items: center;
+
+  padding: 5% 2%;
+
+  background-color: $footerColor;
+  color: white;
+
+  @include smMinBreakPoint {
+    gap: 1em;
+  }
+
+  @include mdMinBreakPoint {
+    padding: 5% 10%;
+    row-gap: 5em;
+    column-gap: 2em;
+  }
+
+  #footer-logo {
+    grid-area: logo;
+    align-self: center;
+    width: 30%;
+
+    @include mdMinBreakPoint {
+      width: 20%;
+    }
+
+    @include lgMinBreakPoint {
+      width: 15%;
+    }
+  }
+
+  .footer-nav {
+    grid-area: nav;
+
+    @include mdMinBreakPoint {
+      padding-top: 5%;
+      border-top: 1px solid white;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      @include mdMinBreakPoint {
+        flex-direction: row;
+      }
+    }
+
+    li {
+      list-style: none;
+
+      &:hover {
+        color: $primaryColor;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .footer-credits {
+    grid-area: credits;
+
+    @include mdMinBreakPoint {
+      padding-top: 5%;
+      border-top: 1px solid white;
+    }
+
+    p {
+      width: 100%;
+      line-height: 1.2;
+    }
+
+    @include mdMinBreakPoint {
+      width: 30ch;
+    }
+
+    @include lgMinBreakPoint {
+      width: 50ch;
+    }
+  }
+}

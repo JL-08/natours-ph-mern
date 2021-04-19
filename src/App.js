@@ -4,6 +4,7 @@ import Intro from './components/Intro/Intro';
 import TourIntro from './components/TourIntro/TourIntro';
 import FeaturedTours from './components/FeaturedTours/FeaturedTours';
 import NearTours from './components/NearTours/NearTours';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <TourIntro />
       <FeaturedTours />
       <NearTours />
+      <Footer />
     </div>
   );
 }

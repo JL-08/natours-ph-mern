@@ -4,7 +4,7 @@ import navLogo from '../../images/logo-white.png';
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className='nav-bar'>
       <div>
         <img src={navLogo} alt='white natours logo' />
       </div>
