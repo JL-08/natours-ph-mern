@@ -1,20 +1,14 @@
 import NavBar from './components/NavBar/NavBar';
 import Banner from './components/Banner/Banner';
-import Intro from './components/Intro/Intro';
-import TourIntro from './components/TourIntro/TourIntro';
-import FeaturedTours from './components/FeaturedTours/FeaturedTours';
-import NearTours from './components/NearTours/NearTours';
 import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
 
 function App() {
   return (
     <div className='App'>
       <NavBar />
       <Banner />
-      <Intro />
-      <TourIntro />
-      <FeaturedTours />
-      <NearTours />
+      <Home />
       <Footer />
     </div>
   );
