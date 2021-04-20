@@ -1,0 +1,146 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
+
+.tour-info {
+  position: relative;
+  top: -9em;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-rows: 50% 50%;
+  gap: 2em;
+  padding: 200px 5% 10% 5%;
+  clip-path: $clipTop;
+
+  @include mdMinBreakPoint {
+    grid-template-columns: 50% 50%;
+  }
+
+  &::after {
+    content: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    z-index: -1;
+
+    @include mdMinBreakPoint {
+      content: '';
+    }
+  }
+
+  h2 {
+    font-weight: 500;
+    background: linear-gradient(
+      100deg,
+      rgba(76, 225, 205, 1) 0%,
+      rgba(85, 177, 197, 1) 50%,
+      rgb(76, 158, 177) 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .tour-stats {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 2em;
+    height: 100%;
+  }
+
+  .facts-wrapper {
+    display: flex;
+    gap: 1em;
+    margin-top: 2em;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+
+    i {
+      color: $primaryShade1Color;
+      display: flex;
+    }
+
+    h4 {
+      color: rgba(0, 0, 0, 0.699);
+      font-weight: 600;
+    }
+
+    span {
+      margin-left: 10px;
+      color: $textLight1Color;
+      font-weight: 400;
+    }
+  }
+
+  .tour-guides {
+    margin-top: 3em;
+  }
+
+  .guides-wrapper {
+    margin-top: 2em;
+    li {
+      display: flex;
+      gap: 1em;
+    }
+  }
+
+  .tour-guide-avatar {
+    height: 70px;
+    width: 70px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .tour-guide-info {
+    display: flex;
+    align-items: center;
+
+    h4 {
+      margin-right: 20px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.699);
+    }
+
+    span {
+      color: $textLight1Color;
+      font-weight: 400;
+    }
+  }
+
+  .tour-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 5%;
+    padding: 5%;
+    background-color: white;
+    width: 100%;
+
+    @include mdMinBreakPoint {
+      width: unset;
+      margin-top: 0;
+      padding: 0;
+      padding-left: 10%;
+    }
+
+    p {
+      width: 90%;
+      line-height: 1.5;
+      color: $textLight1Color;
+    }
+  }
+}
