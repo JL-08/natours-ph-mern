@@ -1,5 +1,6 @@
 import React from 'react';
 import TourBanner from '../TourBanner/TourBanner';
+import TourGallery from '../TourGallery/TourGallery';
 import TourInfo from '../TourInfo/TourInfo';
 
 const TourPage = () => {
@@ -7,6 +8,7 @@ const TourPage = () => {
     <div className='tour-page'>
       <TourBanner />
       <TourInfo />
+      <TourGallery />
     </div>
   );
 };

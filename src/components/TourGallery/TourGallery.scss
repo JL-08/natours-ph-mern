@@ -1,0 +1,30 @@
+@import '../../sassStyles/variables';
+
+.tour-img {
+  display: flex;
+  clip-path: polygon(0 25%, 100% 0, 100% calc(100% - 9vw), 0 100%);
+
+  img {
+    height: 400px;
+    overflow-x: hidden;
+
+    &:nth-child(2) {
+      position: relative;
+      top: -2em;
+    }
+
+    &:nth-child(3) {
+      position: relative;
+      top: -4em;
+    }
+  }
+}
+
+#mapbox {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+  top: -9em;
+  background-color: lightblue;
+  z-index: -1;
+}
