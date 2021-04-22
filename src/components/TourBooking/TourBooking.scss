@@ -1,0 +1,158 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
+
+.tour-booking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 10%;
+
+  .booking-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 5% 2%;
+    align-items: center;
+    width: 100%;
+    max-height: 80vw;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 25px 40px 111px -13px rgba(122, 122, 122, 0.45);
+    background-color: white;
+
+    @include mdMinBreakPoint {
+      flex-direction: row;
+      gap: 0;
+      height: 18vw;
+      padding: 0;
+      padding-right: 5%;
+      text-align: unset;
+    }
+  }
+
+  .booking-imgs {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 30%;
+    width: 100%;
+    overflow: hidden;
+
+    @include mdMinBreakPoint {
+      height: 100%;
+      width: 20%;
+    }
+
+    img:nth-child(2),
+    img:nth-child(3),
+    .logo-bg {
+      position: absolute;
+      left: 30%;
+      width: 100px;
+      height: 100px;
+      clip-path: circle(50%);
+
+      @include mdMinBreakPoint {
+        left: -25%;
+      }
+
+      @include lgMinBreakPoint {
+        left: -25%;
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .logo-bg {
+      background-color: $primaryColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+
+      img {
+        width: 80%;
+        height: 43%;
+      }
+    }
+
+    img:nth-child(2) {
+      left: calc(30% + 2.5em);
+      z-index: 2;
+
+      @include mdMinBreakPoint {
+        left: calc(-25% + 1.5em);
+      }
+
+      @include lgMinBreakPoint {
+        left: calc(-25% + 2.5em);
+      }
+    }
+    img:nth-child(3) {
+      left: calc(30% + 4.5em);
+      z-index: 1;
+
+      @include mdMinBreakPoint {
+        left: calc(-25% + 3em);
+      }
+
+      @include lgMinBreakPoint {
+        left: calc(-25% + 4.5em);
+      }
+    }
+  }
+
+  .booking-text {
+    flex: 1;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      background: linear-gradient(
+        100deg,
+        rgba(76, 225, 205, 1) 0%,
+        rgba(85, 177, 197, 1) 50%,
+        rgb(76, 158, 177) 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @include mdMinBreakPoint {
+        font-size: 1.2rem;
+      }
+
+      @include lgMinBreakPoint {
+        font-size: 2rem;
+      }
+    }
+
+    h3 {
+      color: $textLight1Color;
+      font-size: 1.2rem;
+      font-weight: 400;
+
+      @include mdMinBreakPoint {
+        font-size: 0.9rem;
+      }
+
+      @include lgMinBreakPoint {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  button {
+    background-color: $primaryColor;
+    border-radius: 50px;
+    height: 3em;
+
+    @include mdMinBreakPoint {
+      font-size: 0.8rem;
+      width: 16vw;
+    }
+
+    @include lgMinBreakPoint {
+      font-size: 1rem;
+    }
+  }
+}
