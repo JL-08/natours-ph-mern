@@ -4,16 +4,17 @@
 .tour-info {
   position: relative;
   top: -9em;
-  margin-bottom: -19em;
+  margin-bottom: -5em;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-rows: 50% 50%;
   gap: 2em;
-  padding: 200px 5% 10% 5%;
-  clip-path: $clipTop;
+  padding: 200px 5% 20% 5%;
 
   @include mdMinBreakPoint {
     grid-template-columns: 50% 50%;
+    margin-bottom: -19em;
+    clip-path: $clipTop;
   }
 
   &::after {
@@ -129,6 +130,7 @@
     margin-top: 5%;
     padding: 5%;
     background-color: white;
+    height: 100%;
     width: 100%;
 
     @include mdMinBreakPoint {

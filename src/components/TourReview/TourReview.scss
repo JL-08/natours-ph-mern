@@ -1,0 +1,90 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
+
+.tour-review {
+  position: relative;
+  top: -9em;
+  margin-bottom: -9em;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+  padding: 10% 5% 10% 5%;
+
+  background-image: linear-gradient(
+    100deg,
+    rgba(76, 225, 205, 1) 0%,
+    rgba(85, 177, 197, 1) 100%
+  );
+  clip-path: $clipBottom;
+  clip-path: $clipTop;
+}
+
+.review-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5em;
+  width: 100%;
+  height: 90%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  @include lgMinBreakPoint {
+    padding: 2% 0;
+    height: 100%;
+  }
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 400px;
+  justify-content: space-evenly;
+  gap: 2em;
+  height: 80%;
+  padding: 2%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 5px 10px 33px -3px rgba(0, 0, 0, 0.24);
+
+  @include lgMinBreakPoint {
+    height: 100%;
+  }
+
+  p {
+    color: $textLight1Color;
+    font-family: 'Bitter', serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  i {
+    color: $primaryShade1Color;
+    font-size: 1.475rem;
+  }
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  align-self: center;
+
+  img {
+    height: 70px;
+    width: 70px;
+    clip-path: circle(50%);
+  }
+
+  h2 {
+    color: $textLight1Color;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 1em;
+  }
+}
+
+.review-rating {
+  align-self: center;
+}

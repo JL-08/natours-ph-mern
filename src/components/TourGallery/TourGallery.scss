@@ -1,21 +1,38 @@
 @import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
 
 .tour-img {
   display: flex;
   clip-path: polygon(0 25%, 100% 0, 100% calc(100% - 9vw), 0 100%);
 
   img {
-    height: 400px;
+    height: 200px;
     overflow-x: hidden;
+
+    @include mdMinBreakPoint {
+      height: 300px;
+    }
+
+    @include lgMinBreakPoint {
+      height: 400px;
+    }
 
     &:nth-child(2) {
       position: relative;
-      top: -2em;
+      top: -0.5em;
+
+      @include lgMinBreakPoint {
+        top: -2em;
+      }
     }
 
     &:nth-child(3) {
       position: relative;
-      top: -4em;
+      top: -2em;
+
+      @include lgMinBreakPoint {
+        top: -4em;
+      }
     }
   }
 }
@@ -25,6 +42,7 @@
   width: 100%;
   position: relative;
   top: -9em;
+  margin-bottom: -9em;
   background-color: lightblue;
   z-index: -1;
 }
