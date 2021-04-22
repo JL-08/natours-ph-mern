@@ -14,7 +14,10 @@ const Tour = () => {
       <div className='card-details'>
         <div className='card-sub-heading'>
           <h4>Medium 7-day tour</h4>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Vel, sapiente.
+          </p>
         </div>
         <div className='card-info'>
           <i class='fas fa-map-marker-alt'>

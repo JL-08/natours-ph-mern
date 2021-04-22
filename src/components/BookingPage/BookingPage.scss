@@ -1,0 +1,163 @@
+@import '../../sassStyles/mixins';
+
+.booking-page {
+  padding: 5% 2%;
+
+  @include lgMinBreakPoint {
+    padding: 5% 10%;
+  }
+
+  h1 {
+    border-bottom: 2px solid black;
+    padding-bottom: 1%;
+  }
+
+  .sort-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 2%;
+
+    label {
+      margin-right: 10px;
+    }
+  }
+
+  .tour-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 1em;
+
+    @include smMinBreakPoint {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mdMinBreakPoint {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .tour-card {
+    width: 100%;
+    height: 70vw;
+
+    @include mdMinBreakPoint {
+      height: 53vw;
+    }
+
+    @include lgMinBreakPoint {
+      width: 100%;
+      height: 40vw;
+    }
+
+    @include xlMinBreakPoint {
+      width: 90%;
+      height: 37vw;
+    }
+  }
+
+  .card-header {
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.3;
+
+      // @include mdMinBreakPoint {
+      //   font-size: 1.675rem;
+      // }
+
+      // @include lgMinBreakPoint {
+      //   font-size: 2rem;
+      // }
+    }
+
+    img {
+      height: 99%;
+    }
+  }
+
+  .card-sub-heading {
+    gap: 5px;
+
+    h4 {
+      font-size: 0.75rem;
+    }
+
+    p {
+      display: none;
+
+      @include mdMinBreakPoint {
+        display: block;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .card-info {
+    margin-top: 10px;
+
+    @include mdMinBreakPoint {
+      margin-top: 0;
+    }
+
+    i {
+      font-size: 0.8rem;
+
+      @include mdMinBreakPoint {
+        font-size: 1rem;
+      }
+    }
+
+    span {
+      font-size: 14px;
+
+      @include mdMinBreakPoint {
+        font-size: 0.8rem;
+      }
+      @include lgMinBreakPoint {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .tour-stats {
+    h4 {
+      font-size: 1rem;
+
+      @include lgMinBreakPoint {
+        font-size: 0.9rem;
+      }
+    }
+
+    span {
+      font-size: 0.675rem;
+    }
+  }
+
+  .card-footer {
+    @include mdMinBreakPoint {
+      grid-template-columns: 1fr 0.5fr;
+      gap: 0;
+    }
+  }
+
+  .card-btn {
+    button {
+      padding: 10% 1.5em;
+      font-size: 0.9rem;
+
+      @include mdMinBreakPoint {
+        padding: 13% 1em;
+        font-size: 0.7rem;
+      }
+
+      @include lgMinBreakPoint {
+        padding: 13% 1em;
+        font-size: 0.9rem;
+      }
+
+      @include xlMinBreakPoint {
+        padding: 13% 1.8em;
+      }
+    }
+  }
+}
