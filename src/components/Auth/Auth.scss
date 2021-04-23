@@ -1,0 +1,71 @@
+@import '../../sassStyles/variables';
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8em 5em;
+
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5em;
+    background-color: white;
+    box-shadow: 2px 3px 27px 1px rgba(82, 82, 82, 0.2);
+
+    h3 {
+      margin-bottom: 1.2em;
+      background: linear-gradient(
+        100deg,
+        rgba(76, 225, 205, 1) 0%,
+        rgb(76, 158, 177) 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  form {
+    margin-bottom: 2em;
+
+    button {
+      padding: 1rem 2rem;
+      background-color: $primaryColor;
+      border-radius: 50px;
+    }
+  }
+
+  .form-group {
+    display: block;
+
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: $textColor;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    input {
+      display: block;
+      padding: 0.825rem 1.1rem;
+      margin-bottom: 2em;
+      width: 100%;
+      border: none;
+      border-radius: 3px;
+      background-color: #f2f2f2;
+      font-size: 1rem;
+    }
+  }
+
+  .name-input {
+    display: flex;
+    gap: 1em;
+  }
+
+  #switch-btn {
+    color: $textLight1Color;
+  }
+}
