@@ -31,6 +31,8 @@
     margin-bottom: 2em;
 
     button {
+      display: block;
+      margin: auto;
       padding: 1rem 2rem;
       background-color: $primaryColor;
       border-radius: 50px;
@@ -63,6 +65,13 @@
   .name-input {
     display: flex;
     gap: 1em;
+  }
+
+  #google-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
   }
 
   #switch-btn {

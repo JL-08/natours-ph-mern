@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Input from './Input';
 import './Auth.scss';
 
+import { GoogleLogin } from 'react-google-login';
+import Icon from './icon';
+
 const initialState = {
   firstName: '',
   lastName: '',
@@ -23,11 +26,23 @@ const Auth = () => {
     setIsSignup((prev) => !prev);
   };
 
+  const googleSuccess = () => {};
+  const googleFailure = () => {};
+
   return (
     <div className='auth'>
       <div className='container'>
         <h3>{isSignup ? 'REGISTER AN ACCOUNT' : 'LOG INTO YOUR ACCOUNT'}</h3>
         <form>
+          <div id='google-btn'>
+            <GoogleLogin
+              clientId='31532041823-4duasdh60p2agc06svikhvn8e2ebu154.apps.googleusercontent.com'
+              buttonText='Sign in with Google'
+              onSuccess={googleSuccess}
+              onFailure={googleFailure}
+              cookiePolicy='single_host_origin'
+            />
+          </div>
           {isSignup ? (
             <div className='name-input'>
               <Input
