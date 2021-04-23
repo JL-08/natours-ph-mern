@@ -3,7 +3,7 @@
 $navColor: #444444;
 
 .nav-bar {
-  height: 3.675em;
+  height: 4.5em;
   width: 100%;
   background-color: $navColor;
   padding: 0.8em;
@@ -27,5 +27,24 @@ $navColor: #444444;
   .nav__btn-primary {
     border: 2px solid white;
     border-radius: 50px;
+  }
+
+  .nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em 2em;
+    color: white;
+    border-right: 2px solid white;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  #nav-avatar {
+    width: 50px;
+    height: 50px;
+    clip-path: circle(50%);
   }
 }
