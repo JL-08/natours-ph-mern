@@ -4,7 +4,7 @@ import navLogo from '../../images/logo-white.png';
 import sample from '../../images/swimming.jpg';
 
 const NavBar = () => {
-  const [user, setUser] = useState({ fname: 'John', lname: 'Smith' });
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
   const UserNav = () => {
     if (user) {
@@ -13,7 +13,7 @@ const NavBar = () => {
           <div className='nav-profile'>
             <img src={sample} alt='' id='nav-avatar' />
             <h4>
-              {user.fname} {user.lname}
+              {user.firstName} {user.lastName}
             </h4>
           </div>
           <button>LOGOUT</button>

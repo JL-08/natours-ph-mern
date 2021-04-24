@@ -5,9 +5,16 @@ import './sassStyles/_global.scss';
 import './sassStyles/_typography.scss';
 import './sassStyles/_buttons.scss';
 
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from './reducers/index';
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );

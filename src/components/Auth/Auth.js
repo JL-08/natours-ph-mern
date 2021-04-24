@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import Input from './Input';
 import './Auth.scss';
 
 import { GoogleLogin } from 'react-google-login';
-import Icon from './icon';
+import { register } from '../../actions/authActions';
 
 const initialState = {
   firstName: '',
   lastName: '',
   email: '',
   password: '',
-  confirmPassword: '',
+  passwordConfirm: '',
 };
 
 const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState(initialState);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (isSignup) {
+      dispatch(register(formData, history));
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,7 +45,7 @@ const Auth = () => {
     <div className='auth'>
       <div className='container'>
         <h3>{isSignup ? 'REGISTER AN ACCOUNT' : 'LOG INTO YOUR ACCOUNT'}</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div id='google-btn'>
             <GoogleLogin
               clientId='31532041823-4duasdh60p2agc06svikhvn8e2ebu154.apps.googleusercontent.com'
@@ -46,14 +58,14 @@ const Auth = () => {
           {isSignup ? (
             <div className='name-input'>
               <Input
-                name='fname'
+                name='firstName'
                 label='First Name'
                 handleChange={handleChange}
                 type='text'
                 placeholder='John'
               />
               <Input
-                name='lname'
+                name='lastName'
                 label='Last Name'
                 handleChange={handleChange}
                 type='text'
@@ -78,7 +90,7 @@ const Auth = () => {
 
           {isSignup ? (
             <Input
-              name='cpassword'
+              name='passwordConfirm'
               label='Confirm Password'
               handleChange={handleChange}
               type='password'
