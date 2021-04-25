@@ -12,3 +12,15 @@ export const register = (formData, history) => async (dispatch) => {
     console.log(err);
   }
 };
+
+export const login = (formData, history) => async (dispatch) => {
+  try {
+    const { data } = await api.login(formData);
+
+    dispatch({ type: AUTH, data });
+
+    history.push('/');
+  } catch (err) {
+    console.log(err);
+  }
+};

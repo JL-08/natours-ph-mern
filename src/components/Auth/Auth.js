@@ -5,7 +5,7 @@ import Input from './Input';
 import './Auth.scss';
 
 import { GoogleLogin } from 'react-google-login';
-import { register } from '../../actions/authActions';
+import { register, login } from '../../actions/authActions';
 
 const initialState = {
   firstName: '',
@@ -25,9 +25,8 @@ const Auth = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (isSignup) {
-      dispatch(register(formData, history));
-    }
+    if (isSignup) dispatch(register(formData, history));
+    else dispatch(login(formData, history));
   };
 
   const handleChange = (e) => {

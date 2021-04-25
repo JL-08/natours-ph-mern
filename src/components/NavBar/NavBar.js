@@ -1,10 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import decode from 'jwt-decode';
 import './NavBar.scss';
 import navLogo from '../../images/logo-white.png';
 import sample from '../../images/swimming.jpg';
+import { LOGOUT } from '../../constants/actionTypes';
 
 const NavBar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const dispatch = useDispatch();
+  const history = useHistory();
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   const token = user?.token;
+
+  //   if (token) {
+  //     const decoded = decode(token);
+
+  //     if (decoded.exp * 1000 < new Date().getTime()) handleLogout();
+  //   }
+  // }, [location]);
+
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+
+    // history.push('/');
+
+    setUser(null);
+  };
 
   const UserNav = () => {
     if (user) {
@@ -16,7 +41,7 @@ const NavBar = () => {
               {user.firstName} {user.lastName}
             </h4>
           </div>
-          <button>LOGOUT</button>
+          <button onClick={handleLogout}>LOGOUT</button>
         </>
       );
     }
