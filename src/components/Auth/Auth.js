@@ -6,6 +6,7 @@ import './Auth.scss';
 
 import { GoogleLogin } from 'react-google-login';
 import { register, login } from '../../actions/authActions';
+import { AUTH } from '../../constants/actionTypes';
 
 const initialState = {
   firstName: '',
@@ -25,8 +26,11 @@ const Auth = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (isSignup) dispatch(register(formData, history));
-    else dispatch(login(formData, history));
+    if (isSignup) {
+      dispatch(register(formData, history));
+    } else {
+      dispatch(login(formData, history));
+    }
   };
 
   const handleChange = (e) => {
@@ -37,8 +41,22 @@ const Auth = () => {
     setIsSignup((prev) => !prev);
   };
 
-  const googleSuccess = () => {};
-  const googleFailure = () => {};
+  const googleSuccess = async (res) => {
+    console.log(res);
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+
+    try {
+      dispatch({ type: 'GOOGLE_AUTH', data: { result, token } });
+
+      // history.push('/);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const googleFailure = () => {
+    console.log('Google sign-in unsuccessful. Please try again.');
+  };
 
   return (
     <div className='auth'>

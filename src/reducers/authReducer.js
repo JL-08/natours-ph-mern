@@ -1,29 +1,36 @@
-import { AUTH, LOGOUT } from '../constants/actionTypes';
+import { AUTH, GOOGLE_AUTH, LOGOUT } from '../constants/actionTypes';
+
+let data;
 
 const authReducer = (state = { authData: null }, action) => {
   switch (action.type) {
     case AUTH:
-      console.log(action);
-      const { user } = action?.data?.data;
-      const { token } = action?.data;
+      data = {
+        firstName: action?.data?.data?.user?.firstName,
+        lastName: action?.data?.data?.user?.lastName,
+        role: action?.data?.data?.user?.role,
+        token: action?.data?.token,
+      };
 
-      localStorage.setItem(
-        'profile',
-        JSON.stringify({
-          firstName: user.firstName,
-          lastName: user.lastName,
-          role: user.role,
-          token,
-        })
-      );
+      localStorage.setItem('profile', JSON.stringify(data));
       return {
         ...state,
-        authData: {
-          firstName: user.firstName,
-          lastName: user.lastName,
-          role: user.role,
-          token,
-        },
+        authData: data,
+      };
+
+    case GOOGLE_AUTH:
+      console.log(action);
+      data = {
+        firstName: action?.data?.result?.givenName,
+        lastName: action?.data?.result?.familyName,
+        role: 'user',
+        token: action?.data?.token,
+      };
+
+      localStorage.setItem('profile', JSON.stringify(data));
+      return {
+        ...state,
+        authData: data,
       };
 
     case LOGOUT:
