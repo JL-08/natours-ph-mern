@@ -1,15 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import sample from '../../../images/sightseeing.jpg';
 
 const Tour = () => {
   return (
     <div className='card'>
-      <div className='card-img'>
+      <figure className='card-img'>
         <img src={sample} alt='sample img' />
-      </div>
+      </figure>
       <div className='card-header'>
         <div className='tour-details'>
-          <span class='tour-date'>02/21 - 02/25</span>
+          <span className='tour-date'>02/21 - 02/25</span>
           <h3>BAGUIO RAILING FOREST</h3>
         </div>
       </div>
@@ -21,9 +23,11 @@ const Tour = () => {
         </p>
       </div>
       <div className='card-arrow'>
-        <i className='fas fa-arrow-circle-right'>
-          <span> Learn More</span>
-        </i>
+        <Link to='/overview'>
+          <i className='fas fa-arrow-circle-right'>
+            <span> Learn More</span>
+          </i>
+        </Link>
       </div>
     </div>
   );

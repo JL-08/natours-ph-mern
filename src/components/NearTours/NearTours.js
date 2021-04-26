@@ -4,13 +4,13 @@ import './NearTours.scss';
 
 const NearTours = () => {
   return (
-    <div className='near-tours'>
+    <article className='near-tours'>
       <h1>AVAILABLE TOURS NEAR ME</h1>
-      <div className='tours-container'>
+      <section className='tours-container'>
         <Tour />
         <Tour />
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

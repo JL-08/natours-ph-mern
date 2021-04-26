@@ -4,23 +4,23 @@ import sample from '../../images/swimming.jpg';
 
 const TourInfo = () => {
   return (
-    <div className='tour-info'>
+    <article className='tour-info'>
       <div className='tour-stats'>
-        <div className='tour-facts'>
+        <section className='tour-facts'>
           <h2>QUICK FACTS</h2>
           <div className='facts-wrapper'>
             <ul className='facts-icon'>
               <li>
-                <i class='fas fa-calendar'></i>
+                <i className='fas fa-calendar'></i>
               </li>
               <li>
-                <i class='fas fa-chart-line'></i>
+                <i className='fas fa-chart-line'></i>
               </li>
               <li>
-                <i class='fas fa-users'></i>
+                <i className='fas fa-users'></i>
               </li>
               <li>
-                <i class='fas fa-star'></i>
+                <i className='fas fa-star'></i>
               </li>
             </ul>
 
@@ -47,9 +47,9 @@ const TourInfo = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </section>
 
-        <div className='tour-guides'>
+        <section className='tour-guides'>
           <h2>YOUR TOUR GUIDES</h2>
           <div className='guides-wrapper'>
             <ul>
@@ -64,9 +64,9 @@ const TourInfo = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </section>
       </div>
-      <div className='tour-summary'>
+      <section className='tour-summary'>
         <h2>ABOUT BAGUIO RAILING FOREST</h2>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio
@@ -82,8 +82,8 @@ const TourInfo = () => {
           sapiente necessitatibus voluptatum tempore laudantium, ab porro, id
           soluta! Asperiores, aliquid?
         </p>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

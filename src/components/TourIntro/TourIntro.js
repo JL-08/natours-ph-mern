@@ -5,11 +5,11 @@ import './TourIntro.scss';
 
 const TourIntro = () => {
   return (
-    <div className='tour-intro'>
+    <article className='tour-intro'>
       <div className='intro-bg'></div>
       <Activities />
       <UpcomingTours />
-    </div>
+    </article>
   );
 };
 

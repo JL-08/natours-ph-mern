@@ -20,19 +20,19 @@ const Review = () => {
       </div>
       <div className='review-rating'>
         <span>
-          <i class='fas fa-star'></i>
+          <i className='fas fa-star'></i>
         </span>
         <span>
-          <i class='fas fa-star'></i>
+          <i className='fas fa-star'></i>
         </span>
         <span>
-          <i class='fas fa-star'></i>
+          <i className='fas fa-star'></i>
         </span>
         <span>
-          <i class='fas fa-star-half-alt'></i>
+          <i className='fas fa-star-half-alt'></i>
         </span>
         <span>
-          <i class='far fa-star'></i>
+          <i className='far fa-star'></i>
         </span>
       </div>
     </div>

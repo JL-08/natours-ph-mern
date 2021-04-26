@@ -5,10 +5,14 @@ import '../../sassStyles/_animations.scss';
 
 const Banner = () => {
   return (
-    <div className='banner'>
-      <div style={{ background: `url(${bannerBg}) no-repeat fixed center` }} />
-      <div className='overlay' />
-      <div className='text-container'>
+    <header className='banner'>
+      <figure>
+        <div
+          style={{ background: `url(${bannerBg}) no-repeat fixed center` }}
+        />
+        <div className='overlay' />
+      </figure>
+      <section className='text-container'>
         <h1>
           Great Adventures
           <br /> Awaits You!
@@ -19,11 +23,11 @@ const Banner = () => {
             lot of adventures out there, waiting for us to relive them.
           </p>
         </div>
-        <div class='arrows'>
+        <div className='arrows'>
           <h3>DISCOVER THE PHILIPPINES</h3>
         </div>
-      </div>
-    </div>
+      </section>
+    </header>
   );
 };
 

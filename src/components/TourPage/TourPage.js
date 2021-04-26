@@ -7,13 +7,13 @@ import TourBooking from '../TourBooking/TourBooking';
 
 const TourPage = () => {
   return (
-    <div className='tour-page'>
+    <>
       <TourBanner />
       <TourInfo />
       <TourGallery />
       <TourReview />
       <TourBooking />
-    </div>
+    </>
   );
 };
 

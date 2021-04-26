@@ -1,16 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import sample from '../../images/biking.jpg';
 import './TourCard.scss';
 
 const Tour = () => {
   return (
     <div className='tour-card'>
-      <div className='card-header'>
+      <figure className='card-header'>
         <img src={sample} alt='sample img' />
         <h2>
           <span>BAGUIO RAILING FOREST</span>
         </h2>
-      </div>
+      </figure>
       <div className='card-details'>
         <div className='card-sub-heading'>
           <h4>Medium 7-day tour</h4>
@@ -20,16 +22,16 @@ const Tour = () => {
           </p>
         </div>
         <div className='card-info'>
-          <i class='fas fa-map-marker-alt'>
+          <i className='fas fa-map-marker-alt'>
             <span>Baguio, PH</span>
           </i>
-          <i class='fab fa-font-awesome-flag'>
+          <i className='fab fa-font-awesome-flag'>
             <span>4 locations</span>
           </i>
-          <i class='fas fa-calendar-alt'>
+          <i className='fas fa-calendar-alt'>
             <span>May 2021</span>
           </i>
-          <i class='fas fa-users'>
+          <i className='fas fa-users'>
             <span>15 people</span>
           </i>
         </div>
@@ -44,7 +46,9 @@ const Tour = () => {
           </h4>
         </div>
         <div className='card-btn'>
-          <button>DETAILS</button>
+          <Link to='/overview'>
+            <button>DETAILS</button>
+          </Link>
         </div>
       </div>
     </div>

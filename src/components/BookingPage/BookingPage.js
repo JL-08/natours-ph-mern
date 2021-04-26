@@ -4,7 +4,7 @@ import './BookingPage.scss';
 
 const BookingPage = () => {
   return (
-    <div className='booking-page'>
+    <article className='booking-page'>
       <h1>BOOK TOURS</h1>
       <div className='sort-toolbar'>
         <label for='sort'>Sort By:</label>
@@ -18,12 +18,12 @@ const BookingPage = () => {
           <option value='rating'>Rating</option>
         </select>
       </div>
-      <div className='tour-wrapper'>
+      <section className='tour-wrapper'>
         <Tour />
         <Tour />
         <Tour />
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

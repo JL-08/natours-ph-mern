@@ -4,14 +4,14 @@ import './FeaturedTours.scss';
 
 const FeaturedTours = () => {
   return (
-    <div className='featured-tours'>
+    <article className='featured-tours'>
       <h1>FEATURED TOURS</h1>
-      <div className='tours-container'>
+      <section className='tours-container'>
         <Tour />
         <Tour />
         <Tour />
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

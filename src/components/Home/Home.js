@@ -7,13 +7,13 @@ import NearTours from '../NearTours/NearTours';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Banner />
       <Intro />
       <TourIntro />
       <FeaturedTours />
       <NearTours />
-    </div>
+    </>
   );
 };
 

@@ -26,21 +26,21 @@
         &:hover {
           opacity: 0.7;
           cursor: pointer;
-        }
 
-        &:hover > div {
-          opacity: 1;
-          transform: translate3d(0, 0, 0);
-          -webkit-transition-delay: 0.05s;
-          transition-delay: 0.05s;
-          -webkit-transition-duration: 0.35s;
-          transition-duration: 0.35s;
+          .hover-desc {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            -webkit-transition-delay: 0.05s;
+            transition-delay: 0.05s;
+            -webkit-transition-duration: 0.35s;
+            transition-duration: 0.35s;
+          }
         }
       }
     }
   }
 
-  & > div > div > div {
+  .hover-desc {
     position: absolute;
     bottom: 5%;
     left: 5%;
@@ -57,6 +57,7 @@
   }
 
   img {
+    position: relative;
     height: 100%;
     width: 100%;
   }

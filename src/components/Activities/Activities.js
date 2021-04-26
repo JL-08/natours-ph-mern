@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Activities.scss';
 import bikingImg from '../../images/biking.jpg';
 import swimmingImg from '../../images/swimming.jpg';
@@ -7,42 +8,50 @@ import sightseeingImg from '../../images/sightseeing.jpg';
 
 const Activities = () => {
   return (
-    <div className='activities'>
-      <div className='grid-container'>
+    <section className='activities'>
+      <figure className='grid-container'>
         <div className='item-1'>
-          <img src={bikingImg} alt='biking' />
-          <div>
-            <span>01</span>
-            <h2>BIKING</h2>
-            <i class='fas fa-arrow-right'></i>
-          </div>
+          <Link to='/tours'>
+            <img src={bikingImg} alt='biking' />
+            <div className='hover-desc'>
+              <span>01</span>
+              <h2>BIKING</h2>
+              <i className='fas fa-arrow-right'></i>
+            </div>
+          </Link>
         </div>
         <div className='item-2'>
-          <img src={swimmingImg} alt='swimming' />
-          <div>
-            <span>02</span>
-            <h2>SWIMMING</h2>
-            <i class='fas fa-arrow-right'></i>
-          </div>
+          <Link to='/tours'>
+            <img src={swimmingImg} alt='swimming' />
+            <div className='hover-desc'>
+              <span>02</span>
+              <h2>SWIMMING</h2>
+              <i className='fas fa-arrow-right'></i>
+            </div>
+          </Link>
         </div>
         <div className='item-3'>
-          <img src={hikingImg} alt='hiking' />
-          <div>
-            <span>03</span>
-            <h2>HIKING</h2>
-            <i class='fas fa-arrow-right'></i>
-          </div>
+          <Link to='/tours'>
+            <img src={hikingImg} alt='hiking' />
+            <div className='hover-desc'>
+              <span>03</span>
+              <h2>HIKING</h2>
+              <i className='fas fa-arrow-right'></i>
+            </div>
+          </Link>
         </div>
         <div className='item-4'>
-          <img src={sightseeingImg} alt='sighseeing' />
-          <div>
-            <span>04</span>
-            <h2>SIGHTSEEING</h2>
-            <i class='fas fa-arrow-right'></i>
-          </div>
+          <Link to='/tours'>
+            <img src={sightseeingImg} alt='sighseeing' />
+            <div className='hover-desc'>
+              <span>04</span>
+              <h2>SIGHTSEEING</h2>
+              <i className='fas fa-arrow-right'></i>
+            </div>
+          </Link>
         </div>
-      </div>
-    </div>
+      </figure>
+    </section>
   );
 };
 

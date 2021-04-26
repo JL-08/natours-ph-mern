@@ -15,11 +15,11 @@ $navColor: #444444;
     width: auto;
   }
 
-  & > div {
+  figure {
     flex: 1;
   }
 
-  div:nth-child(2) {
+  nav {
     display: flex;
     justify-content: flex-end;
   }

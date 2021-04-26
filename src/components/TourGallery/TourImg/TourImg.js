@@ -5,11 +5,11 @@ import sample3 from '../../../images/swimming.jpg';
 
 const TourImg = () => {
   return (
-    <div className='tour-img'>
+    <figure className='tour-img'>
       <img src={sample1} alt='sample img' />
       <img src={sample2} alt='sample img' />
       <img src={sample3} alt='sample img' />
-    </div>
+    </figure>
   );
 };
 

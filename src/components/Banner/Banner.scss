@@ -8,7 +8,8 @@
   position: relative;
   clip-path: $clipBottom;
 
-  & > div {
+  figure > div,
+  section {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -43,7 +44,7 @@
     h1 {
       line-height: 1;
       letter-spacing: 1px;
-      color: $secondaryLight1Color;
+      color: lightgreen;
       text-shadow: $secondaryDark1Color 1px 1px;
       text-align: center;
 

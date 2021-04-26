@@ -4,13 +4,13 @@ import './UpcomingTours.scss';
 
 const UpcomingTours = () => {
   return (
-    <div className='upcoming-tours'>
-      <h2>UPCOMING TOURS</h2>
-      <div className='tour-container'>
+    <article className='upcoming-tours'>
+      <h1>UPCOMING TOURS</h1>
+      <section className='tour-container'>
         <Tour />
         <Tour />
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

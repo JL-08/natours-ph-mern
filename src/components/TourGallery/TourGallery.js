@@ -5,10 +5,10 @@ import './TourGallery.scss';
 
 const TourGallery = () => {
   return (
-    <>
+    <section>
       <TourImg />
       <TourMap />
-    </>
+    </section>
   );
 };
 

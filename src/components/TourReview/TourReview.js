@@ -4,14 +4,14 @@ import './TourReview.scss';
 
 const TourReview = () => {
   return (
-    <div className='tour-review'>
+    <section className='tour-review'>
       <div className='review-wrapper'>
         <Review />
         <Review />
         <Review />
         <Review />
       </div>
-    </div>
+    </section>
   );
 };
 

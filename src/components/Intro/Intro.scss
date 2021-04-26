@@ -10,9 +10,6 @@
     gap: 1em;
     color: $primaryDark1Color;
 
-    h3 {
-    }
-
     .text-wrapper {
       width: 100%;
 
@@ -30,6 +27,16 @@
         width: 20em;
         color: black;
       }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
     }
   }
 }
