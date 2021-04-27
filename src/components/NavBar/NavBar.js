@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import decode from 'jwt-decode';
+
 import './NavBar.scss';
 import navLogo from '../../images/logo-white.png';
 import sample from '../../images/swimming.jpg';
+
+import { LOGOUT } from '../../constants/actionTypes';
 
 const NavBar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -25,7 +28,7 @@ const NavBar = () => {
   }, [location]);
 
   const handleLogout = () => {
-    dispatch({ type: 'LOGOUT' });
+    dispatch({ type: LOGOUT });
 
     history.push('/');
 

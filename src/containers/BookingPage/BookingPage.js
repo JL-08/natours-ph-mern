@@ -1,5 +1,5 @@
 import React from 'react';
-import Tour from '../TourCard/TourCard';
+import Tour from '../../components/TourCard/TourCard';
 import './BookingPage.scss';
 
 const BookingPage = () => {
@@ -7,7 +7,7 @@ const BookingPage = () => {
     <article className='booking-page'>
       <h1>BOOK TOURS</h1>
       <div className='sort-toolbar'>
-        <label for='sort'>Sort By:</label>
+        <label htmlFor='sort'>Sort By:</label>
 
         <select name='sort'>
           <option value='name'>Name</option>

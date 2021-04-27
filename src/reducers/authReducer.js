@@ -1,4 +1,4 @@
-import { AUTH, GOOGLE_AUTH, LOGOUT } from '../constants/actionTypes';
+import { AUTH, GOOGLE_AUTH, LOGOUT, GET_AUTH } from '../constants/actionTypes';
 
 let data;
 
@@ -9,17 +9,15 @@ const authReducer = (state = { authData: null }, action) => {
         firstName: action?.data?.data?.user?.firstName,
         lastName: action?.data?.data?.user?.lastName,
         role: action?.data?.data?.user?.role,
-        token: action?.data?.token,
       };
 
       localStorage.setItem('profile', JSON.stringify(data));
       return {
         ...state,
-        authData: data,
+        authData: { ...data, token: action?.data?.token },
       };
 
     case GOOGLE_AUTH:
-      console.log(action);
       data = {
         firstName: action?.data?.result?.givenName,
         lastName: action?.data?.result?.familyName,
@@ -30,12 +28,18 @@ const authReducer = (state = { authData: null }, action) => {
       localStorage.setItem('profile', JSON.stringify(data));
       return {
         ...state,
-        authData: data,
+        authData: { ...data, token: action?.data?.token },
       };
 
     case LOGOUT:
       localStorage.clear();
       return { ...state, authData: null };
+
+    case GET_AUTH:
+      return {
+        ...state,
+        authData: JSON.parse(localStorage.getItem('profile')),
+      };
 
     default:
       return state;

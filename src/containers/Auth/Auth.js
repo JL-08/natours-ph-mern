@@ -6,6 +6,7 @@ import './Auth.scss';
 
 import { GoogleLogin } from 'react-google-login';
 import { register, login } from '../../actions/authActions';
+import { GOOGLE_AUTH } from '../../constants/actionTypes';
 
 const initialState = {
   firstName: '',
@@ -48,12 +49,11 @@ const Auth = () => {
   };
 
   const googleSuccess = async (res) => {
-    console.log(res);
     const result = res?.profileObj;
     const token = res?.tokenId;
 
     try {
-      dispatch({ type: 'GOOGLE_AUTH', data: { result, token } });
+      dispatch({ type: GOOGLE_AUTH, data: { result, token } });
 
       history.push('/');
     } catch (err) {

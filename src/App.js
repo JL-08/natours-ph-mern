@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import NavBar from './components/NavBar/NavBar';
-import Banner from './components/Banner/Banner';
 import Footer from './components/Footer/Footer';
-import Home from './components/Home/Home';
-import Auth from './components/Auth/Auth';
-import TourPage from './components/TourPage/TourPage';
-import BookingPage from './components/BookingPage/BookingPage';
+import Home from './containers/Home/Home';
+import Auth from './containers/Auth/Auth';
+import TourPage from './containers/TourPage/TourPage';
+import BookingPage from './containers/BookingPage/BookingPage';
 
 function App() {
   return (
