@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 import sample from '../../../images/sightseeing.jpg';
 
-const Tour = () => {
+const Tour = ({ tour }) => {
+  console.log('tour', tour);
   return (
     <div className='card'>
       <figure className='card-img'>
@@ -11,16 +13,14 @@ const Tour = () => {
       </figure>
       <div className='card-header'>
         <div className='tour-details'>
-          <span className='tour-date'>02/21 - 02/25</span>
-          <h3>BAGUIO RAILING FOREST</h3>
+          <span className='tour-date'>
+            {moment(tour.startDates[0]).format('M/d')}
+          </span>
+          <h3>{tour.name}</h3>
         </div>
       </div>
       <div className='card-bottom-header'>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo culpa
-          nam ducimus reiciendis. Dolor officia velit tenetur mollitia debitis?
-          Quae cum fugit dolor ab nemo corporis. Est ullam in delectus.
-        </p>
+        <p>{tour.description}</p>
       </div>
       <div className='card-arrow'>
         <Link to='/overview'>
