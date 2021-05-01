@@ -16,4 +16,6 @@ export const register = (formData) => API.post('/users/register', formData);
 export const login = (formData) => API.post('/users/login', formData);
 
 export const getUpcomingTours = () =>
-  API.get('/tours?sort=startDates&limit=2&fields=startDates,name,description');
+  API.get(
+    '/tours/home/upcoming-tours?sort=startDates&limit=2&fields=name,startDates,summary,description,duration'
+  );
