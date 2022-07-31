@@ -6,24 +6,25 @@ import Home from './containers/Home/Home';
 import Auth from './containers/Auth/Auth';
 import TourPage from './containers/TourPage/TourPage';
 import BookingPage from './containers/BookingPage/BookingPage';
+import { AUTH, OVERVIEW, TOURS } from './constants/pageRoutes';
 
 function App() {
   return (
     <Router>
-      <div className='App'>
+      <div className="App">
         <NavBar />
         <main>
           <Switch>
-            <Route exact path='/'>
+            <Route exact path="/">
               <Home />
             </Route>
-            <Route path='/auth'>
+            <Route path={AUTH}>
               <Auth />
             </Route>
-            <Route path='/tours'>
+            <Route path={TOURS}>
               <BookingPage />
             </Route>
-            <Route path='/overview'>
+            <Route path={OVERVIEW}>
               <TourPage />
             </Route>
           </Switch>

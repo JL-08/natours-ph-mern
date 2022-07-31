@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { authRoutes, tourRoutes } from '../constants/apiRoutes';
 
 const API = axios.create({ baseURL: 'http://localhost:5000/api/v1' });
 
@@ -12,10 +13,7 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const register = (formData) => API.post('/users/register', formData);
-export const login = (formData) => API.post('/users/login', formData);
+export const register = (formData) => API.post(authRoutes.REGISTER, formData);
+export const login = (formData) => API.post(authRoutes.LOGIN, formData);
 
-export const getUpcomingTours = () =>
-  API.get(
-    '/tours/home/upcoming-tours?sort=startDates&limit=2&fields=name,startDates,summary,description,duration'
-  );
+export const getUpcomingTours = () => API.get(tourRoutes.GET_UPCOMING_TOURS);
