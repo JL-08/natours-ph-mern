@@ -7,31 +7,34 @@ import Auth from './containers/Auth/Auth';
 import TourPage from './containers/TourPage/TourPage';
 import BookingPage from './containers/BookingPage/BookingPage';
 import { AUTH, OVERVIEW, TOURS } from './constants/pageRoutes';
+import { ProviderAuth } from './context/auth-context';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        <main>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path={AUTH}>
-              <Auth />
-            </Route>
-            <Route path={TOURS}>
-              <BookingPage />
-            </Route>
-            <Route path={OVERVIEW}>
-              <TourPage />
-            </Route>
-          </Switch>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <ProviderAuth>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <main>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path={AUTH}>
+                <Auth />
+              </Route>
+              <Route path={TOURS}>
+                <BookingPage />
+              </Route>
+              <Route path={OVERVIEW}>
+                <TourPage />
+              </Route>
+            </Switch>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </ProviderAuth>
   );
 }
 

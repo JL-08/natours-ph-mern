@@ -1,6 +1,7 @@
 export const authRoutes = {
-  REGISTER: '/users/register',
-  LOGIN: '/users/login',
+  REGISTER: '/auth/register',
+  LOGIN: '/auth/login',
+  TOKEN: '/auth/token',
 };
 
 export const tourRoutes = {

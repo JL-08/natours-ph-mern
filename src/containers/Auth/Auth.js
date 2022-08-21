@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory, useLocation, Redirect } from 'react-router-dom';
 import Input from './Input';
 import './Auth.scss';
 
 import { GoogleLogin } from 'react-google-login';
-import { register, login } from '../../actions/authActions';
-import { GOOGLE_AUTH } from '../../constants/actionTypes';
+import { register, login } from '../../api/AuthAPI';
+import { useAuth } from '../../hooks/useAuth';
+import { authContext } from '../../context/auth-context';
 
 const initialState = {
   firstName: '',
@@ -20,10 +20,10 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState(initialState);
-  const user = JSON.parse(localStorage.getItem('profile'));
-  const dispatch = useDispatch();
+  const { user } = useContext(authContext);
   const history = useHistory();
   const location = useLocation();
+  const { callAuthAPI } = useAuth();
 
   useEffect(() => {
     if (location.pathname.includes('register')) setIsSignup(true);
@@ -32,11 +32,10 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (isSignup) {
-      dispatch(register(formData, history));
+      callAuthAPI(register, formData, history);
     } else {
-      dispatch(login(formData, history));
+      callAuthAPI(login, formData, history);
     }
   };
 
@@ -52,14 +51,9 @@ const Auth = () => {
     const result = res?.profileObj;
     const token = res?.tokenId;
 
-    try {
-      dispatch({ type: GOOGLE_AUTH, data: { result, token } });
-
-      history.push('/');
-    } catch (err) {
-      console.log(err);
-    }
+    // TODO: handle google login
   };
+
   const googleFailure = () => {
     console.log('Google sign-in unsuccessful. Please try again.');
   };
