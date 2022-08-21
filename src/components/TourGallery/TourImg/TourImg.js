@@ -1,7 +1,7 @@
 import React from 'react';
-import sample1 from '../../../images/sightseeing.jpg';
-import sample2 from '../../../images/biking.jpg';
-import sample3 from '../../../images/swimming.jpg';
+import sample1 from '../../../assets/images/sightseeing.jpg';
+import sample2 from '../../../assets/images/biking.jpg';
+import sample3 from '../../../assets/images/swimming.jpg';
 
 const TourImg = () => {
   return (

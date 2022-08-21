@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import sample from '../../images/biking.jpg';
+import sample from '../../assets/images/biking.jpg';
 import './TourCard.scss';
 
 const Tour = () => {

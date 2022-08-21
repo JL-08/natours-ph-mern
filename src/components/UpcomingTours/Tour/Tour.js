@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-import sample from '../../../images/sightseeing.jpg';
+import sample from '../../../assets/images/sightseeing.jpg';
 
 const Tour = ({ tour }) => {
   console.log('tour', tour);

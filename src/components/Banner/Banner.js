@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.scss';
-import bannerBg from '../../images/banner-1.png';
+import bannerBg from '../../assets/images/banner-1.png';
 import '../../sassStyles/_animations.scss';
 
 const Banner = () => {

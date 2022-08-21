@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Activities.scss';
-import bikingImg from '../../images/biking.jpg';
-import swimmingImg from '../../images/swimming.jpg';
-import hikingImg from '../../images/hiking.jpg';
-import sightseeingImg from '../../images/sightseeing.jpg';
+import bikingImg from '../../assets/images/biking.jpg';
+import swimmingImg from '../../assets/images/swimming.jpg';
+import hikingImg from '../../assets/images/hiking.jpg';
+import sightseeingImg from '../../assets/images/sightseeing.jpg';
 
 const Activities = () => {
   return (

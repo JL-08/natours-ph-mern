@@ -1,6 +1,6 @@
 import React from 'react';
 import './TourInfo.scss';
-import sample from '../../images/swimming.jpg';
+import sample from '../../assets/images/swimming.jpg';
 
 const TourInfo = () => {
   return (

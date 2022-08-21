@@ -1,8 +1,8 @@
 import React from 'react';
 import './TourBooking.scss';
-import logo from '../../images/logo-white-sm.png';
-import sample1 from '../../images/sightseeing.jpg';
-import sample2 from '../../images/biking.jpg';
+import logo from '../../assets/images/logo-white-sm.png';
+import sample1 from '../../assets/images/sightseeing.jpg';
+import sample2 from '../../assets/images/biking.jpg';
 
 const TourBooking = () => {
   return (
