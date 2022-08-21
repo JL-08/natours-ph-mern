@@ -1,37 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link, useHistory, useLocation } from 'react-router-dom';
-import decode from 'jwt-decode';
+import React, { useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import './NavBar.scss';
-import navLogo from '../../images/logo-white.png';
-import sample from '../../images/swimming.jpg';
-
-import { LOGOUT } from '../../constants/actionTypes';
+import navLogo from '../../assets/images/logo-white.png';
+import sample from '../../assets/images/swimming.jpg';
+import { authContext } from '../../context/auth-context';
+import { AUTH } from '../../constants/pageRoutes';
 
 const NavBar = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-  const dispatch = useDispatch();
+  const { user, setUser } = useContext(authContext);
   const history = useHistory();
-  const location = useLocation();
-
-  useEffect(() => {
-    const token = user?.token;
-
-    if (token) {
-      const decoded = decode(token);
-
-      if (decoded.exp * 1000 < new Date().getTime()) handleLogout();
-    }
-
-    setUser(JSON.parse(localStorage.getItem('profile')));
-  }, [location]);
 
   const handleLogout = () => {
-    dispatch({ type: LOGOUT });
-
+    // TODO: revoke tokens
     history.push('/');
-
     setUser(null);
   };
 
@@ -52,10 +34,10 @@ const NavBar = () => {
 
     return (
       <>
-        <Link to='/auth/login'>
+        <Link to={`${AUTH}/login`}>
           <button>LOGIN</button>
         </Link>
-        <Link to='/auth/register'>
+        <Link to={`${AUTH}/register`}>
           <button className='nav__btn-primary'>SIGNUP</button>
         </Link>
       </>
