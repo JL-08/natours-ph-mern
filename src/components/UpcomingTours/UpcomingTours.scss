@@ -10,11 +10,19 @@
     gap: 2em;
   }
 
+  & + div {
+    width: fit-content;
+    padding: 5px;
+    border: 1px solid black
+  }
+
   h1 {
     font-weight: 400;
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 5%;
+    color: white;
+    border-bottom: 5px solid white;
   }
 
   .card {
