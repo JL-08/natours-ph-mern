@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Tour from '../TourCard/TourCard';
 import './NearTours.scss';
 import { getUserLocation } from '../../utils/geolocator';
-import { useGeoLocation } from 'use-geo-location';
 import { getNearTours } from '../../api/ToursAPI';
-import { useFetch } from '../../hooks/useFetch';
 import { statuses } from '../../constants/requestStatuses';
 
 const NearTours = () => {

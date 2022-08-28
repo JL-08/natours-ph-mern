@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 
 import sample from '../../../assets/images/sightseeing.jpg';
 import { getClosestDate } from '../../../utils/dateHelper';
