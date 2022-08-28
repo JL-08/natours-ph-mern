@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import sample from '../../../assets/images/sightseeing.jpg';
+import { getClosestDate } from '../../../utils/dateHelper';
 
 const Tour = ({ tour }) => {
-  console.log('tour', tour);
+  const startDate = getClosestDate(tour.startDates);
+
   return (
     <div className='card'>
       <figure className='card-img'>
@@ -14,16 +16,14 @@ const Tour = ({ tour }) => {
       <div className='card-header'>
         <div className='tour-details'>
           <span className='tour-date'>
-            {moment(tour.startDates[0]).format('MMM DD')} -{' '}
-            {moment(tour.startDates[0])
-              .add(tour.duration, 'day')
-              .format('MMM DD')}
+            {startDate.format('MMM DD')} -
+            {startDate.add(tour.duration, 'day').format('MMM DD')}
           </span>
           <h3>{tour.name}</h3>
         </div>
       </div>
       <div className='card-bottom-header'>
-        <p>{tour.summary}</p>
+        <p>{tour.description}</p>
       </div>
       <div className='card-arrow'>
         <Link to='/overview'>

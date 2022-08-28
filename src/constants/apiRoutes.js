@@ -5,6 +5,7 @@ export const authRoutes = {
 };
 
 export const tourRoutes = {
-  GET_UPCOMING_TOURS:
-    '/tours/home/upcoming-tours?sort=startDates&limit=2&fields=name,startDates,summary,description,duration',
+  GET_TOURS: '/tours',
+  GET_UPCOMING_TOURS: '/tours/home/upcoming-tours',
+  GET_NEAR_TOURS: '/tours/tours-within/150/center/',
 };

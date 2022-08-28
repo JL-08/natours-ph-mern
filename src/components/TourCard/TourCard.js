@@ -4,45 +4,48 @@ import { Link } from 'react-router-dom';
 import sample from '../../assets/images/biking.jpg';
 import './TourCard.scss';
 
-const Tour = () => {
+import moment from 'moment';
+
+const Tour = ({ tour }) => {
   return (
     <div className='tour-card'>
       <figure className='card-header'>
         <img src={sample} alt='sample img' />
         <h2>
-          <span>BAGUIO RAILING FOREST</span>
+          <span>{tour.name.toUpperCase()}</span>
         </h2>
       </figure>
       <div className='card-details'>
         <div className='card-sub-heading'>
-          <h4>Medium 7-day tour</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Vel, sapiente.
-          </p>
+          <h4>
+            {tour.difficulty} {tour.duration}-day tour
+          </h4>
+          <p>{tour.summary}</p>
         </div>
         <div className='card-info'>
           <i className='fas fa-map-marker-alt'>
-            <span>Baguio, PH</span>
+            <span>{tour.mainLocation.name}</span>
           </i>
           <i className='fab fa-font-awesome-flag'>
-            <span>4 locations</span>
+            <span>{tour.locations.length} locations</span>
           </i>
           <i className='fas fa-calendar-alt'>
-            <span>May 2021</span>
+            <span>{moment(tour.startDates[0]).format('MMM YYYY')}</span>
           </i>
           <i className='fas fa-users'>
-            <span>15 people</span>
+            <span>{tour.maxGroupSize} people</span>
           </i>
         </div>
       </div>
       <div className='card-footer'>
         <div className='tour-stats'>
           <h4>
-            ₱2999<span> per person</span>
+            ₱{tour.price}
+            <span> per person</span>
           </h4>
           <h4>
-            4.8<span> rating (6)</span>
+            {tour.ratingsAverage}
+            <span> rating ({tour.ratingsQuantity})</span>
           </h4>
         </div>
         <div className='card-btn'>
