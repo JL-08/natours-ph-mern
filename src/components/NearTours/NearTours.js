@@ -4,6 +4,7 @@ import './NearTours.scss';
 import { getUserLocation } from '../../utils/geolocator';
 import { getNearTours } from '../../api/ToursAPI';
 import { statuses } from '../../constants/requestStatuses';
+import ProgressCircle from '../ProgressBar/ProgressCircle';
 
 const NearTours = () => {
   const [location, setLocation] = useState();
@@ -50,7 +51,8 @@ const NearTours = () => {
   const fetchTours = async () => {
     try {
       const response = await getNearTours(
-        `${location.latitude}, ${location.longitude}/unit/km?limit=2`
+        { limit: 2 },
+        { latitude: location.latitude, longitude: location.longitude }
       );
 
       return response.data;
@@ -61,11 +63,17 @@ const NearTours = () => {
 
   return (
     <article className='near-tours'>
-      <h1>AVAILABLE TOURS NEAR ME</h1>
-      <section className='tours-container'>
-        {status === statuses.SUCCESS &&
-          tourList.data.map((tour) => <Tour key={tour._id} tour={tour} />)}
-      </section>
+      {status === statuses.LOADING && <ProgressCircle isPageLoad={false} />}
+      {status === statuses.SUCCESS && tourList?.data && (
+        <>
+          <h1>AVAILABLE TOURS NEAR ME</h1>
+          <section className='tours-container'>
+            {tourList?.data.map((tour) => (
+              <Tour key={tour._id} tour={tour} />
+            ))}
+          </section>
+        </>
+      )}
     </article>
   );
 };
