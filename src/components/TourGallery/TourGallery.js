@@ -3,11 +3,11 @@ import TourImg from './TourImg/TourImg';
 import TourMap from './TourMap/TourMap';
 import './TourGallery.scss';
 
-const TourGallery = () => {
+const TourGallery = ({ tour }) => {
   return (
     <section>
       <TourImg />
-      <TourMap />
+      <TourMap locations={tour.locations} />
     </section>
   );
 };
