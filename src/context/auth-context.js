@@ -3,7 +3,7 @@ import { getNewToken } from '../api/AuthAPI';
 import ProgressCircle from '../components/ProgressBar/ProgressCircle';
 import { statuses } from '../constants/requestStatuses';
 import { useFetch } from '../hooks/useFetch';
-import { setToken } from '../utils/tokenHelper';
+import { getToken, setToken } from '../utils/tokenHelper';
 
 export const authContext = createContext({
   user: {},
@@ -11,15 +11,15 @@ export const authContext = createContext({
 });
 
 export function ProviderAuth({ children }) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState();
   const { status, data } = useFetch(getNewToken);
 
   useEffect(() => {
-    if (data?.data?.token) {
+    if (data?.data?.token && status === statuses.SUCCESS) {
       setToken(data?.data?.token);
       setUser(data?.data?.user);
     }
-  }, [user, data]);
+  }, [user, data, status]);
 
   const auth = {
     user,
@@ -29,7 +29,7 @@ export function ProviderAuth({ children }) {
   return (
     <>
       {status === statuses.LOADING ? (
-        <ProgressCircle />
+        <ProgressCircle isPageLoad={true} />
       ) : (
         <authContext.Provider value={auth}>{children}</authContext.Provider>
       )}
