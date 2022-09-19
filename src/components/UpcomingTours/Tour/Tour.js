@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import sample from '../../../assets/images/sightseeing.jpg';
+import { OVERVIEW } from '../../../constants/pageRoutes';
 import { getClosestDate } from '../../../utils/dateHelper';
 
 const Tour = ({ tour }) => {
@@ -25,7 +26,7 @@ const Tour = ({ tour }) => {
         <p>{tour.description}</p>
       </div>
       <div className='card-arrow'>
-        <Link to='/overview'>
+        <Link to={`${OVERVIEW}/${tour._id}`}>
           <i className='fas fa-arrow-circle-right'>
             <span> Learn More</span>
           </i>

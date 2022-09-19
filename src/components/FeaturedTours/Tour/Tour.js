@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import sample from '../../../assets/images/biking.jpg';
+import { OVERVIEW } from '../../../constants/pageRoutes';
 
 const Tour = ({ tour }) => {
   return (
@@ -26,7 +27,7 @@ const Tour = ({ tour }) => {
             <h2>₱{tour.price}</h2>
           </div>
           <div className='card-btn'>
-            <Link to='/overview'>
+            <Link to={`${OVERVIEW}/${tour._id}`}>
               <button>BOOK NOW</button>
             </Link>
           </div>

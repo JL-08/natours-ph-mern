@@ -1,20 +1,20 @@
 import React from 'react';
 import './TourBanner.scss';
 
-const TourBanner = () => {
+const TourBanner = ({ tour }) => {
   return (
     <header className='tour-banner'>
       <figure className='banner-img'></figure>
       <section className='banner-text'>
         <h1>
-          <span>BAGUIO RAILING FOREST</span>
+          <span>{tour.name}</span>
         </h1>
         <div className='banner-tour-info'>
           <i className='fas fa-clock'>
-            <span> 7 days</span>
+            <span> {tour.duration} days</span>
           </i>
           <i className='fas fa-map-marker-alt'>
-            <span> Baguio, PH</span>
+            <span> {tour.mainLocation.name}</span>
           </i>
         </div>
       </section>

@@ -13,11 +13,11 @@ function App() {
   return (
     <ProviderAuth>
       <Router>
-        <div className="App">
+        <div className='App'>
           <NavBar />
           <main>
             <Switch>
-              <Route exact path="/">
+              <Route exact path='/'>
                 <Home />
               </Route>
               <Route path={AUTH}>
@@ -26,7 +26,7 @@ function App() {
               <Route path={TOURS}>
                 <BookingPage />
               </Route>
-              <Route path={OVERVIEW}>
+              <Route path={`${OVERVIEW}/:id`}>
                 <TourPage />
               </Route>
             </Switch>

@@ -5,6 +5,7 @@ import sample from '../../assets/images/biking.jpg';
 import './TourCard.scss';
 
 import moment from 'moment';
+import { OVERVIEW } from '../../constants/pageRoutes';
 
 const Tour = ({ tour }) => {
   return (
@@ -49,7 +50,7 @@ const Tour = ({ tour }) => {
           </h4>
         </div>
         <div className='card-btn'>
-          <Link to='/overview'>
+          <Link to={`${OVERVIEW}/${tour._id}`}>
             <button>DETAILS</button>
           </Link>
         </div>

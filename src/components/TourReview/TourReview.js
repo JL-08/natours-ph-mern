@@ -2,14 +2,13 @@ import React from 'react';
 import Review from './Review/Review';
 import './TourReview.scss';
 
-const TourReview = () => {
+const TourReview = ({ reviews }) => {
   return (
     <section className='tour-review'>
       <div className='review-wrapper'>
-        <Review />
-        <Review />
-        <Review />
-        <Review />
+        {reviews.map((review) => (
+          <Review key={review._id} review={review} />
+        ))}
       </div>
     </section>
   );
