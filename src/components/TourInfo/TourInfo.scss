@@ -82,6 +82,30 @@
       color: $textLight1Color;
       font-weight: 400;
     }
+
+    div.col {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      margin-top: 10px;
+    }
+
+    div.row {
+      display: flex;
+      flex-direction: row;
+
+      .text-day {
+        color: $primaryShade1Color;
+        font-size: 0.6875rem;
+      }
+
+      h4 {
+        margin-left: 10px;
+      color: $textLight1Color;
+      font-weight: 400;
+
+      }
+    }
   }
 
   .tour-guides {
